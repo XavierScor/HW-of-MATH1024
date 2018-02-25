@@ -1,0 +1,158 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{geometry}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{graphicx}
+\geometry{left=1.5cm}
+\author{GONG,Xianjin}
+\title{Homework 2 of Honor Calculus}
+
+\begin{document}
+\maketitle
+
+\vspace{3.5mm}
+
+\textcolor[rgb]{0.00,0.00,0.50}{\#1}\\
+
+(a)\\
+
+$\because$\qquad$f'(x)=e^x>0$ when $x\in[0,1]$\\
+
+$\therefore$\qquad$\displaystyle A_p=U_{i=1}^{n}\left[\frac{i-1}{n},\frac{i}{n}\right]\times \left[0,e^{\frac{i-1}{n}}\right]$ \qquad $\displaystyle B_p=U_{i=1}^{n}\left[\frac{i-1}{n},\frac{i}{n}\right]\times\left[0,e^{\frac{i}{n}}\right]$\\
+
+$\therefore$\qquad$\displaystyle L(P_n,f)=\frac{1}{n}\cdot e^{\frac{0}{n}}+\frac{1}{n}\cdot e^{\frac{1}{n}}+\cdots+\frac{1}{n}\cdot e^{\frac{n-1}{n}}=\frac{1}{n}\cdot\frac{1(1-e)}{1-e^{\frac{1}{n}}}=\frac{1-e}{n(1-e^{\frac{1}{n}})}$\\
+
+\qquad\quad $\displaystyle U(P_n,f)=\frac{1}{n}\cdot e^{\frac{1}{n}}+\frac{1}{n}\cdot e^{\frac{2}{n}}+\cdots+\frac{1}{n}\cdot e^{\frac{n}{n}}=\frac{1}{n}\cdot\frac{e^{\frac{1}{n}}(1-e)}{1-e^{\frac{1}{n}}}=\frac{e^{\frac{1}{n}}(1-e)}{n(1-e^{\frac{1}{n}})}$\\
+
+(b)\\
+
+$\displaystyle\forall\epsilon>0, \exists N=\frac{2(e-1)}{\epsilon}$ s.t.\\
+
+$\displaystyle n>N\Rightarrow U(P_n,f)-L(P_n,f)=\frac{(e^{\frac{1}{n}}-1)(e-1)}{n(1-e^{\frac{1}{n}})}=\frac{e-1}{n}<\epsilon$\\
+
+$\therefore$\qquad f is Riemann integrable.\\
+
+\vskip 2cm
+
+\textcolor[rgb]{0.00,0.00,0.50}{\#2}\\
+
+We partition the interval [0,1] into n parts of equal length \qquad $\displaystyle [0,1]=U_{i=1}^{n}[\frac{i-1}{n},\frac{i}{n}]$\\
+
+Set $f(x)=x^p$\\
+
+$\because$\qquad$p\in N, f'(x)=px^{p-1}$\\
+
+$\therefore$\qquad$f'(x)>0$ when $x\in[0,1]$\\
+
+$\therefore$\qquad$\displaystyle A_p=U_{i=1}^{n}\left[\frac{i-1}{n},\frac{i}{n}\right]\times\left[0,\left(\frac{i-1}{n}\right)^p\right]$\qquad$\displaystyle B_p=U_{i=1}^{n}\left[\frac{i-1}{n},\frac{i}{n}\right]\times\left[0,\left(\frac{i}{n}\right)\right]$\\
+
+$\therefore$\qquad$\displaystyle L(P,f)=\mu(A_p)=\frac{1}{n}\cdot\left(\frac{0}{n}\right)^p+\frac{1}{n}\cdot\left(\frac{1}{n}\right)^p+\cdots+\frac{1}{n}\cdot\left(\frac{n-1}{n}\right)^p=\frac{1}{n^{p+1}}\left(\frac{1}{p+1}\sum \limits_{j=0}^{p}(-1)^jC_j^{p+1}B_jn^{p+1-j}-n^p\right)$\\
+
+\qquad\quad $\displaystyle U(P,f)=\mu(B_p)=\frac{1}{n}\cdot\left(\frac{1}{n}\right)^p+\frac{1}{n}\cdot\left(\frac{2}{n}\right)^p+\cdots+\frac{1}{n}\cdot\left(\frac{n}{n}\right)^p=\frac{1}{n^{p+1}}\cdot\frac{1}{p+1}\sum \limits_{j=0}^{p}(-1)^jC_j^{p+1}B_jn^{p+1-j}$\\
+
+$\therefore$\qquad$\displaystyle\forall\epsilon>0, \exists N=\frac{2}{\epsilon}$ s.t.\\
+
+$\displaystyle n>N\Rightarrow U(P,f)-L(P,f)=\frac{1}{n}<\epsilon$\\
+
+$\therefore$\qquad f is Riemann integrable.\\
+
+Besides, $\displaystyle\lim \limits_{n \to \infty}L(P,f)=\lim \limits_{n \to \infty}\left(\frac{1}{p+1}+\frac{1}{p+1}\sum \limits_{j=1}^p(-1)^jC_j^{p+1}B_jn^{-j}+\frac{1}{n}\right)=\frac{1}{p+1}$\\
+
+\qquad\qquad$\displaystyle\lim \limits_{n \to \infty}U(P,f)=\lim \limits_{n \to \infty}\left(\frac{1}{p+1}+\frac{1}{p+1}\sum \limits_{j=1}^p(-1)^jC_j^{p+1}B_jn^{-j}\right)=\frac{1}{p+1}$\\
+
+$\therefore$\qquad$\displaystyle \int_0^1x^pdx=\frac{1}{p+1}$\\
+
+\vskip 2cm
+
+\textcolor[rgb]{0.00,0.00,0.50}{\#3}\\
+
+$\because$\qquad According to product-sum formular, $\displaystyle\sin\alpha\sin\beta=-\frac{1}{2}[\cos(\alpha+\beta)-\cos(\alpha-\beta)]$\\
+
+$\therefore$\qquad$\displaystyle2\sin\frac{x}{2}(\sin x+\cdots+\sin nx)=\cos\frac{1}{2}x-\cos\frac{3}{2}x+\cos\frac{3}{2}-\cos\frac{5}{2}+\cdots+\cos\left(n-\frac{1}{2}\right)x-\cos\left(n+\frac{1}{2}\right)x$\\
+
+\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad$\displaystyle\cos\frac{1}{2}x-\cos\left(n+\frac{1}{2}\right)$\\
+
+$\therefore$\qquad$\displaystyle\sin x+\cdots+\sin nx=\frac{\cos\frac{1}{2}x-\cos\left(n+\frac{1}{2}\right)x}{2\sin\frac{1}{2}x}$\\
+
+We partition the interval $[0,\frac{\pi}{2}]$ and $[\frac{\pi}{2},\pi]$ separately into both n parts of equal length.\\
+
+$\displaystyle\left[0,\frac{\pi}{2}\right]=U_{i=1}^n\left[\frac{i-1}{n}\cdot\frac{\pi}{2},\frac{i}{n}\cdot\frac{\pi}{2}\right]$\qquad$\displaystyle\left[\frac{\pi}{2},\pi\right]=U_{i=1}^n\left[\frac{i-1}{n}\cdot\frac{\pi}{2}+\frac{\pi}{2},\frac{i}{n}\cdot\frac{\pi}{2}+\frac{\pi}{2}\right]$\\
+
+$\therefore$\qquad$\displaystyle A_p=U_{i=1}^n\left[\frac{i-1}{n}\cdot\frac{\pi}{2},\frac{i}{n}\cdot\frac{\pi}{2}\right]\times\left[0,\sin\left(\frac{i-1}{n}\cdot\frac{\pi}{2}\right)\right]+U_{i=1}^n\left[\frac{i-1}{n}\cdot\frac{\pi}{2}+\frac{\pi}{2},\frac{i}{n}\cdot\frac{\pi}{2}+\frac{\pi}{2}\right]\times\left[0,\sin\left(\frac{i}{n}\cdot\frac{\pi}{2}+\frac{\pi}{2}\right)\right]$\\
+
+\qquad\quad $\displaystyle B_p=U_{i=1}^n\left[\frac{i-1}{n}\cdot\frac{\pi}{2},\frac{i}{n}\cdot\frac{\pi}{2}\right]\times\left[0,\sin\left(\frac{i}{n}\cdot\frac{\pi}{2}\right)\right]+U_{i=1}^n\left[\frac{i-1}{n}\cdot\frac{\pi}{2}+\frac{\pi}{2},\frac{i}{n}\cdot\frac{\pi}{2}+\frac{\pi}{2}\right]\times\left[0,\sin\left(\frac{i-1}{n}\cdot\frac{\pi}{2}+\frac{\pi}{2}\right)\right]$\\
+
+$\therefore$\qquad$\displaystyle L(P,f)=\mu(A_p)=\sum \limits_{i=1}^n\frac{1}{n}\cdot\frac{\pi}{2}\left(\sin\left(\frac{i-1}{n}\cdot\frac{\pi}{2}\right)+\sin\left(\frac{i+n}{n}\cdot\frac{\pi}{2}\right)\right)$\\
+
+\qquad\qquad\qquad\qquad\qquad$=\displaystyle\frac{\frac{\pi}{4n}}{\sin\frac{\pi}{4n}}\left(\cos\frac{\pi}{4n}-\cos\left(n-\frac{1}{2}\right)\frac{\pi}{2n}-\cos\left(2n+\frac{1}{2}\right)\frac{\pi}{2n}+\cos\left(n+\frac{3}{2}\right)\frac{\pi}{2n}\right)$\\
+
+$\therefore$\qquad$\displaystyle U(P,f)=\mu(B_p)=\sum \limits_{i=1}^n\frac{1}{n}\cdot\frac{\pi}{2}\left(\sin\left(\frac{i}{n}\cdot\frac{\pi}{2}\right)+\sin\left(\frac{i-1+n}{n}\cdot\frac{\pi}{2}\right)\right)$\\
+
+\qquad\qquad\qquad\qquad\qquad$=\displaystyle\frac{\frac{\pi}{4n}}{\sin\frac{\pi}{4n}}\left(\cos\frac{\pi}{4n}-\cos\left(n+\frac{1}{2}\right)\frac{\pi}{2n}-\cos\left(2n-\frac{1}{2}\right)\frac{\pi}{2n}+\cos\left(n+\frac{1}{2}\right)\frac{\pi}{2n}\right)$\\
+
+$\therefore$\qquad$\displaystyle\forall\epsilon>0, \exists N=\min \left\{1,\frac{\pi}{4\epsilon}\right\}$ s.t.\\
+
+$n>N\Rightarrow\displaystyle U(P,f)-L(P,f)=\frac{\frac{\pi}{4n}}{\sin\frac{\pi}{4n}}\left(\cos\left(n-\frac{1}{2}\right)\frac{\pi}{2n}-\sin\frac{\pi}{4n}+\sin\frac{\pi}{4n}-\cos\left(n+\frac{3}{2}\right)\frac{\pi}{2n}\right)<\epsilon$\\
+
+$\therefore$\qquad$\sin x$ is Riemann integrable.\\
+
+Besides, $\displaystyle\lim \limits_{n \to \infty}U(P,f)=\lim \limits_{n \to \infty}L(P,f)=2$\\
+
+$\therefore$\qquad$\displaystyle \sum \limits_0^\pi\sin xdx=2$\\
+
+\vskip 2cm
+
+\textcolor[rgb]{0.00,0.00,0.50}{\#4}\\
+
+We partition the interval [a,b] into n parts of equal length which is smaller than distance between any two c-points.\\
+
+Focus on the nearby of $c_1$, suppose it is between $x_i and x_{i+1}$ and we set $\delta<\min\{c_1-\delta,c_1+\delta\}$\\
+
+then $\displaystyle\inf \limits_{[x_i,c_1-\delta]}g(c_1-\delta-x_i)+\inf \limits_{[c_1-\delta,c_1+\delta]}g\cdot2\delta+\inf \limits_{[c_1+\delta,x_{i+1}]}g(x_{i+1}-c_1-\delta)$\\
+
+\qquad$\displaystyle\geq\inf \limits_{[x_i,x_{i+1}]}f(c_1-\delta-x_i)+\inf \limits_{[c_1-\delta,c_1+\delta]}g\cdot2\delta+\inf \limits_{[c_1+\delta,x_{i+1}]}g(x_{i+1}-c_1-\delta)$\\
+
+\qquad$\displaystyle\geq\inf \limits_{[x_i,x_{i+1}]}f(x_{i+1}-x_i)+\inf \limits_{[c_1-\delta,c_1+\delta]}g\cdot2\delta$\\
+
+By M.I., it should be the same for any other c-points.\\
+
+Set $\displaystyle\inf \limits_{[c_i-\delta,c_i+\delta]}g=m_i, \inf \limits_{[c_i-\delta,c_i+\delta]}f=l_i, \sup \limits_{[c_i-\delta,c_i+\delta]}g=M_i, \sup \limits_{[c_i-\delta,c_i+\delta]}g=L_i$\\
+
+$\therefore$\qquad$\displaystyle L(P,g)\geq L(P,g)+(m_1-l_1+m_2-l_2+\cdots+m_k-l_k)\cdot2\delta$\\
+
+$\therefore$\qquad$\displaystyle M(P,g)\leq L(P,g)+(M_1-L_1+M_2-L_2+\cdots+M_k-L_k)\cdot2\delta$\\
+
+$\because$\qquad$\displaystyle\lim \limits_{\delta \to 0}U(P,g)=U(P,f), \displaystyle\lim \limits_{\delta \to 0}L(P,g)=L(P,f) $\\
+
+$\therefore$\qquad$\int_a^bf(x)dx=\int_a^bg(x)dx$\\
+
+\vskip 2cm
+
+\textcolor[rgb]{0.00,0.00,0.50}{\#5}\\
+
+We partition interval $[0,1]$ into n parts of equal length.\qquad $\displaystyle[0,1]=U_{i=1}^n\left[\frac{i-1}{n},\frac{i}{n}\right]$\\
+
+For any i, we know the sub-interval should contain some irrational numbers.\\
+
+So $\displaystyle A_p=U_{i=1}^n\left[\frac{i-1}{n},\frac{i}{n}\right]\times[0,0]$\\
+
+$\therefore$\qquad$L(P,f)=0$\\
+
+For the upper Darboux sum.\\
+
+$\forall\epsilon>0, \exists N$ that $\displaystyle\frac{1}{N}<\frac{\epsilon}{2}$\\
+
+We assume for $q<N$, there are M proper fractions as form of $\displaystyle\frac{p}{q}$\\
+
+Set $N'=M\cdot N$\\
+
+Then $\displaystyle n>N'\Rightarrow\sum \limits_{i=1}^n\frac{1}{n}\sup \limits_{[\frac{i-1}{n},\frac{1}{n}]}f\leq M\cdot\frac{1}{2}\cdot\frac{1}{n}+\frac{1}{N}<\frac{1}{2N}+\frac{1}{N}<\epsilon$\\
+
+$\therefore$\qquad when $n>N', U(P,g)-U(P,f)<\epsilon$ and $\lim \limits_{n \to \infty}U(P,f)=\lim \limits_{n \to \infty}L(P,f)=0$\\
+
+$\therefore$\qquad f is Riemann integrable on $[0,1]$ and $\int_0^1f(x)dx=0$\\
+
+\end{document}
