@@ -8,7 +8,7 @@
 \usepackage{graphicx}
 \geometry{left=1.5cm}
 \author{GONG,Xianjin}
-\title{Homework 2 of Honor Calculus}
+\title{Homework 3 of Honor Calculus}
 
 \begin{document}
 \maketitle
@@ -17,38 +17,183 @@
 
 \textcolor[rgb]{0.00,0.00,0.50}{\#1}\\
 
+(a)\\
 
+The chart has been attached at the end of this PDF file.\\
+
+According to the chart, $M_n=0.1393709648$, $T_n=0.1394077164$ and $S_n=0.1393832141$\\
+
+As for details, please refer to Table 1 \& 2 \& 3\\
+
+(b)\\
+
+$\because$\qquad$\displaystyle(e^{-x^2})^{(2)}=(4x^2-2)e^{-x^2}, (e^{-x^2})^{(3)}=4x(3-2x^2)e^{-x^2}$\\
+
+Let $(e^{-x^2})^{(3)}>0$, we can get $\displaystyle x<\sqrt{\frac{3}{2}}$ when $x\in[1,3]$\\
+
+$\therefore$\qquad$(e^{-x^2})$ is bounded by $e^{-\frac{3}{2}}$\\
+
+$\therefore$\qquad$\displaystyle\left|\int_a^bf(x)dx-M_n\right|\leq\frac{e^{-\frac{3}{2}}(3-1)^3}{24\times 100^2}=\frac{1}{e^{\frac{3}{2}}\times3\times 100^2}\leq\frac{1}{3\times3\times 100^2}\leq 10^{-4}$\\
+
+\qquad\quad$\displaystyle\left|\int_a^bf(x)dx-T_n\right|\leq\frac{e^{-\frac{3}{2}}(3-1)^3}{12\times 100^2}=\frac{2}{e^{\frac{3}{2}}\times3\times 100^2}\leq\frac{2}{3\times3\times 100^2}\leq 10^{-3}$\\
+
+\qquad\quad $\displaystyle\left|\int_a^bf(x)dx-S_n\right|\leq\frac{e^{-\frac{3}{2}}(3-1)^3}{180\times 100^2}=\frac{1}{e^{\frac{3}{2}}\times3\times 100^2\times\frac{15}{2}}\leq 10^{-5}$\\
+
+So for the midpoint rule, it can accurate up to four decimal places. For the trapezodial rule, it is three decimal places. For the Simpson'rule, it can accurate up to five decimal places.\\
+
+Assume that the result got by Simpson's rule is accurate. Accoding to the data. We can find that for all three ways, the first three decimal places are the same. And for the forth decimal palces, the first one is the same as the last one, which agree with our conclusion.\\
 
 \vskip 2cm
 
 \textcolor[rgb]{0.00,0.00,0.50}{\#2}\\
 
+According to the qustion, we know that:\\
 
+$\displaystyle f(x)=f(c)+\frac{f'(c)}{1!}(x-c)+\frac{f^{(2)}(c)}{2!}(x-c)^2+\cdots+\frac{f^{(n-1)}(c)}{(n-1)!}(x-c)^{n-1}+o((x-c)^{n-1})$\\
+
+Set $\displaystyle F(t)=f(x)-\left[f(t)+\frac{f'(t)}{1!}(x-t)+\cdots+\frac{f^{(n-1)}(t)}{(n-1)!}(x-t)^{n-1}\right]$\\
+
+Then we can know $F(x)=0$\\
+
+Set $G(t)=(x-t)^n$\\
+
+According to M.V.T.\\
+
+$\displaystyle\frac{F(t)}{G(t)}=\frac{F(t)-F(x)}{G(t)-G(x)}=\frac{F'(\xi)}{G'(\xi)}=\frac{-\frac{f^{(n)}(\xi)}{(n-1)!}(x-\xi)^{n-1}}{-n(x-\xi)^{n-1}}$ where $\xi$ is between x and t.\\
+
+$\therefore$\qquad$\displaystyle F(t)=\frac{f^{(n)}(\xi)}{n!}(x-t)^n$\\
 
 \vskip 2cm
 
 \textcolor[rgb]{0.00,0.00,0.50}{\#3}\\
 
+(a)\\
 
+Partition interval [a,b] into n parts of equal length.\\
 
-\vskip 2cm
+For any interval $[a_i,b_i]$, since f was first defferentiable, according to M.V.T $f(x)-f(a_i)=f'(\xi)(x-a_i)$ where $\xi\in(a_i,x)$\\
+
+$\therefore$\qquad$\displaystyle\left|\int_{a_i}^{b_i}\left(f(x)-f(a_i)\right)\right|=\left|\int_{a_i}^{b_i}f'(\xi)(x-a_i)\right|$\\
+
+$\therefore$\qquad$\displaystyle\left|\int_{a_i}^{b_i}f(x)-\int_{a_i}^{b_i}f(a_i)\right|\leq\left|\int_{a_i}^{b_i}(x-a_i)\right| \sup \limits_{[a_i,b_i]}|f'|$\\
+
+$\therefore$\qquad$\displaystyle\left|\int_{a_i}^{b_i}f(x)-(b_i-a_i)f(a_i)\right|\leq\frac{(b_i-a_i)^2}{2}\sup \limits_{[a_i,b_i]}|f'|$\\
+
+$\therefore$\qquad$\displaystyle\left|\sum \limits_{i=0}^{n-1}\left(\int_{a_i}^{b_i}f(x)-(b_i-a_i)f(a_i)\right)\right|\leq\sum \limits_{i=0}^{n-1}\frac{(b_i-a_i)^2}{2}\sup \limits_{[a_i,b_i]}|f'|$\\
+
+$\therefore$\qquad$\displaystyle\left|\int_{a}^bf(x)-L_n\right|\leq\frac{1}{2}\cdot n \cdot \left(\frac{b-a}{n}\right)^2 \cdot \sup \limits_{[a,b]}|f'|=\frac{(b-a)^2}{2n}\sup\limits_{[a,b]}|f'|$\\
+
+(b)\\
+
+Partition the interval [a,b] into n parts of equal length.\\
+
+For any two sequent intervals $[x_i, x_{i+1}], [x_{i+1},x_{i+2}]$, we can shift the equation to let $x_{i+1}=0, x_i+x_{i+2}=0$\\
+
+Set $F'(x)=f(x), x_{i+2}=t$\\
+
+Then $\displaystyle Error_i=\int_{x_i}^{x_{i+2}}f(x)-\frac{\Delta x}{3}\left(f(x_i)+4f(x_{i+1})+f(x_{i+2})\right)$\\
+
+Set $Error_i=H(t)$\\
+
+\qquad$\displaystyle H(t)=F(t)-F(-t)-\frac{t}{3}(f(-t)+4f(0)+f(t))$\\
+
+\qquad$\displaystyle H'(t)=f(t)+f(-t)-\frac{1}{3}f(-t)-\frac{4}{3}f(0)-\frac{1}{3}f(t)+\frac{t}{3}f'(-t)-\frac{t}{3}f'(t)$\\
+
+\qquad\qquad\quad$=\frac{2}{3}(f(t)+f(-t))+\frac{t}{3}(f'(-t)-f'(t))-\frac{4}{3}f(0)$\\
+
+\qquad$\displaystyle H^{(2)}(t)=\frac{1}{3}(f'(t)-f'(-t))+\frac{t}{3}(-f^{(2)}(-t)-f^{(2)}(t))$\\
+
+\qquad$\displaystyle H^{(3)}(t)=\frac{t}{3}(f^{(3)}(-t)-f^{(3)}(t))$\\
+
+According to Cauchy M.V.T.
+
+$\therefore$\qquad$\displaystyle\frac{H(t)}{t^5}=\frac{H(t)-H(0)}{t^5-0^5}=\frac{H'(t_1)}{5t_1^4}=-\frac{t_3}{3}\cdot\frac{f^{(3)}(t_3)-f^{(3)}(-t_3)}{60t_3^2}$\\
+
+\qquad\qquad\qquad$\displaystyle =-\frac{f^{(3)}(t_3)-f^{(3)}(-t_3)}{2t_3}\cdot\frac{1}{90}=-\frac{1}{90}f^{(4)}(t_4)$ where $0<t_4<t_3<t_2<t_1<t$\\
+
+$\therefore$\qquad$\displaystyle H(t)\leq\frac{t^5}{90}\sup\limits_{[-t,t]}|f^{(4)}|$\\
+
+$\therefore$\qquad$\displaystyle Error_i\leq\frac{\left(\frac{x_{i+2}-x_i}{2}\right)^5}{90}\cdot\sup\limits_{[x_i,x_{i+2}]}|f^{(4)}|$\\
+
+$\therefore$\qquad$\displaystyle Error\leq Error_0+Error_2+\cdots+Error_{n-2}\leq\frac{1}{180n^4}(b-a)^5\sup \limits_{[a,b]}|f^{(4)}|$\\
+
+\vskip 2.7cm
 
 \textcolor[rgb]{0.00,0.00,0.50}{\#4}\\
 
+(a)\\
 
+$\because$\qquad$\displaystyle\left[(x+A)f(x)\right]_{x_i}^{x_i+\Delta x}=(x_i+\Delta x+A)f(x_i+\Delta x)-(x_i+A)f(x_i)=\frac{\Delta x}{2}\cdot\left[f(x_i)+f(x_i+\Delta x)\right]$\\
+
+$\therefore$\qquad$\displaystyle A=-x_i-\frac{\Delta x}{2}$\\
+
+$\because$\qquad$\displaystyle\left[((x+A)^2+B)f'(x)\right]_{x_i}^{x_i+\Delta x}=\left[\right(x_i+\Delta x-x_i+\frac{\Delta x}{2})^2+B]f'(x_i+\Delta x)-\left[(x_i-x_i-\frac{\Delta x}{2})^2+B\right]f'(x_i)$\\
+
+\qquad\qquad\qquad\qquad\qquad\qquad\qquad\quad$=0$\\
+
+$\therefore$\qquad$\displaystyle B=-\frac{\Delta x^2}{4}$\\
+
+(b)\\
+
+Set $\displaystyle g(x)=(x+A)f(x)-\frac{1}{2}((x+A)^2+B)f'(x)$, we can get:\\
+
+$\displaystyle g'(x)=xf'(x)+f(x)+Af'(x)-\frac{1}{2}(2(x+A))f'(x)-\frac{1}{2}((x+A)^2+B)f^{(2)}(x)$\\
+
+\qquad\qquad$\displaystyle f(x)-\frac{1}{2}((x+A)^2+B)f^{(2)}(x)$\\
+
+$\therefore$\qquad$\displaystyle\int_{x_i}^{x_i+\Delta x}g'(x)dx=\int_{x_i}^{x_i+\Delta x}f(x)dx-\frac{1}{2}\int_{x_i}^{x_i+\Delta x}((x+A)^2+B)f^{(2)}(x)dx$\\
+
+$\therefore$\qquad$\displaystyle\frac{\Delta x}{2}(f(x_i)+f(x_i+\Delta x))+\frac{1}{2}\int_{x_i}^{x_i+\Delta x}((x+A)^2+B)f^{(2)}(x)dx=\int_{x_i}^{x_i+\Delta x}f(x)dx$\\
+
+(c)\\
+
+According to (b)\\
+
+$\displaystyle\left|\int_{x_i}^{x_i+\Delta x}f(x)dx-\frac{1}{2}\Delta x(f(x_i)+f(x_i+\Delta x))\right|=\left|\frac{1}{2}\int_{x_i}^{x_i+\Delta x}((x+A)^2+B)f^{(2)}(x)dx\right|$\\
+
+And\qquad$\displaystyle\sum \limits_{i=0}^{n-1}\int_{x_i}^{x_i+\Delta x}f(x)dx=\int_a^bf(x)dx$\qquad$\displaystyle\sum_{i=0}^{n-1}\frac{1}{2}\Delta x(f(x_i+\Delta x)+f(x_i))=T_n$\\
+
+$\therefore$\qquad$\displaystyle\sum \limits_{i=0}^{n-1}\frac{1}{2}\int_{x_i}^{x_i+\Delta x}((x+A)^2+B)f^{(2)}(x)dx\leq\frac{1}{2}\sup\limits_{[a,b]}|f^{(2)}|\sum \limits_{i=0}^{n-1}\int_{x_i}^{x_i+\Delta x}((x+A)^2+B)$\\
+
+\hskip 6.97cm$\displaystyle\leq\frac{1}{2}\sup \limits_{[a,b]}|f^{(2)}|\sum \limits_{i=0}^{n-1}\left|\frac{\Delta x^3}{12}-\frac{\Delta x^3}{4}\right|$\\
+
+\hskip 6.97cm$\displaystyle=\frac{(b-a)^3}{12n^2}\sup \limits_{[a,b]}|f^{(2)}|$\\
 
 \vskip 2cm
 
 \textcolor[rgb]{0.00,0.00,0.50}{\#5}\\
 
+(a)\\
 
+$\because$\qquad$f(c)=0$\qquad and\qquad$\displaystyle f(c)=f(x_n)+f'(x_n)(c-x_n)+\frac{f^{(2)}(\xi)}{2}(c-x_n)^2$ where $\xi$ is between c and $x_n$\\
+
+$\therefore$\qquad$\displaystyle x_{n+1}-c=(x_n-c)-\frac{f(x_n)}{f'(x_n)}=\frac{f(x_n)}{f'(x_n)}+\frac{f^{(2)}(\xi)}{2f'(x_n)}(x_n-c)^2-\frac{f(x_n)}{f'(x_n)}=\frac{f^{(2)}(\xi)}{2f'(x_n)}(x_n-c)^2$\\
+
+(b)\\
+
+$\because$\qquad$\displaystyle x_{n+1}-c=\frac{f^{(2)}(\xi)}{2f'(x_n)}(x_n-c)^2$\\
+
+Accoding to the question
+
+$\therefore$\qquad$\displaystyle x_{n+1}-c\leq\frac{M}{2L}(x_n-c)^2$\\
+
+$\therefore$\qquad$\displaystyle\log(x_{n+1}-c)+\log\frac{M}{2L}\leq2(\log(x_n-c)+\log\frac{M}{2L})$\\
+
+$\therefore$\qquad$\displaystyle\log(x_n-c)+\log\frac{M}{2L}\leq2^{n-1}(\log(x_1-c)+\log\frac{M}{2L})$\\
+
+$\therefore$\qquad$\displaystyle x_n-c\leq\frac{2L}{M}(\frac{M}{2L}(x_1-c))^{2^{n-1}}$\\
 
 \vskip 5cm
+
+\begin{center}
+\huge\textbf{There is a chart below, please flip over.}	
+\end{center}
+
 
 % Table generated by Excel2LaTeX from sheet 'Sheet1'
 \begin{table}[htbp]
   \centering
-  \caption{Add caption}
+  \caption{Chart for Problem 1 Part 1 (no.0 to 40)}
     \begin{tabular}{lcccc}
     \multicolumn{1}{c}{$x_i$} & $f(x_i)$ & $f((x_i+x_{i+1})/2)$ & \multicolumn{1}{p{16.39em}}{$(1/150)(f(x_i)+4f(x_{i+1})+f(x_{i+2}))$\newline{}for i=0,2,бн,98} & $(1/100)(f(x_i)+f(x_{i+1}))$ \\
     0     & 0.3678794412 & 0.3605588825 & 0.014134569 & 0.007211928 \\
@@ -99,7 +244,7 @@
 % Table generated by Excel2LaTeX from sheet 'Sheet1'
 \begin{table}[htbp]
   \centering
-  \caption{Add caption}
+  \caption{Chart for Problem 1 Part 2 (no.41 to 80)}
     \begin{tabular}{lcccc}
     \multicolumn{1}{c}{$x_i$} & $f(x_i)$ & $f((x_i+x_{i+1})/2)$ & \multicolumn{1}{p{16.39em}}{$(1/150)(f(x_i)+4f(x_{i+1})+f(x_{i+2}))$\newline{}for i=0,2,бн,98} & $(1/100)(f(x_i)+f(x_{i+1}))$ \\
     41    & 0.0364286400 & 0.0351229681 & 0     & 0.00070286 \\
@@ -149,7 +294,7 @@
 % Table generated by Excel2LaTeX from sheet 'Sheet1'
 \begin{table}[htbp]
   \centering
-  \caption{Add caption}
+  \caption{Chart for Problem 1 Part 3 (no.81 to 100)}
     \begin{tabular}{lcccc}
     \multicolumn{1}{c}{$x_i$} & $f(x_i)$ & $f((x_i+x_{i+1})/2)$ & \multicolumn{1}{p{16.39em}}{$(1/150)(f(x_i)+4f(x_{i+1})+f(x_{i+2}))$\newline{}for i=0,2,бн,98} & $(1/100)(f(x_i)+f(x_{i+1}))$ \\
     81    & 0.0010443088 & 0.0009908970 & 0     & 1.98434E-05 \\
