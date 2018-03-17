@@ -1,0 +1,213 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{geometry}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{graphicx}
+\geometry{left=1.5cm}
+\author{GONG,Xianjin}
+\title{Homework 4 of Honor Calculus}
+
+\begin{document}
+\maketitle
+
+\vspace{3.5mm}
+
+\textcolor[rgb]{0.00,0.00,0.50}{\#1}\\
+
+(a)\\
+
+$\because$ \qquad $\displaystyle F(x) = \int_a^xf(t)dt$\\
+
+$\therefore$ \qquad According to F.T.C., $\displaystyle F'(x) = f(x)$\\
+
+$\because$ \qquad $\displaystyle f \geq 0 $ when $\displaystyle x \in [a,b]$\\
+
+$\therefore$ \qquad $\displaystyle F'(x) \geq 0$ when $\displaystyle x \in [a,b]$\\
+
+$\therefore$ \qquad F is increasing on [a,b].\\
+
+Prove by contradiction that $\displaystyle \int_a^b f(t)dt = 0 \Rightarrow f(x) = 0$\\
+
+$\because$ \qquad $\displaystyle F(a) = \int_a^a f(t)dt = 0$ \qquad $\displaystyle F(b) = \int_a^b f(t)dt = 0$ \quad and F is increasing on [a,b].\\
+
+$\therefore$ \qquad $\displaystyle F(x) \neq 0$ for $\displaystyle x \in (a,b)$ $\Rightarrow$ $F(x) > F(a)$ for $x \in (a,b)$\\
+
+then $F(x) > F(b) = F(a)$ which is contradictory.\\
+
+$\therefore$ \qquad $F(x) = 0$ for $x \in [a,b]$\\
+
+$\therefore$ \qquad $f(x) = F'(x) = 0$ for any $x \in [a,b]$\\
+
+(b)\\
+
+Set $u(x) = g(x)$, then $\displaystyle \int_a^b g(x)u(x) = g^2(x)$\\
+
+$\because$ \qquad $g^2(x)$ is non-negative \quad $\displaystyle \int_a^bg^2(x) = 0$\\
+
+$\therefore$ \qquad $g^2(x) = 0$ according to (a).\\
+
+$\therefore$ \qquad $g(x) = 0$\\
+
+\vskip 3cm
+
+\textcolor[rgb]{0.00,0.00,0.50}{\#2}\\
+
+According to the question, we know that:\\
+
+$\displaystyle I_{m+1,n+1}(x) = \int_0^x \cos^{m+1}{\theta} \left[\cos{(n+1) \theta}\right]d\theta$\\
+
+\hskip 1.96cm $\displaystyle = \frac{\cos^{m+1}{x} \cdot \sin{(n+1)x}}{n+1} - \int_0^x (m+1) \cos^m{\theta} \cdot (-\sin{\theta}) \cdot \frac{\sin{(n+1) \theta}}{n+1}d\theta$\\
+
+\hskip 1.96cm $\displaystyle = \frac{1}{n+1} \cdot \cos^{m+1}{x} \sin{(n+1)x} + \frac{m+1}{n+1} \int_0^x \cos^m{\theta} \sin{\theta} (\sin{n\theta} \cos{\theta} + \cos{n\theta} \sin{\theta})d\theta$\\
+
+\hskip 1.96cm $\displaystyle = \frac{\cos^{m+1}{x} \sin{(n+1)x}}{n+1} + \frac{m+1}{n+1} \left(\int_0^x \cos^{m+1}{\theta} \sin{n\theta} sin{\theta} d\theta + \int_0^x\cos^m{\theta} \cos{n\theta} d\theta - \int_0^x \cos^{m+1}{\theta} \cos{n\theta} \cos{\theta} d\theta\right)$\\
+
+\hskip 1.96cm $\displaystyle = \frac{1}{n+1} \cos^{m+1}x \sin{(n+1)x - \frac{m+1}{n+1} \int_0^x \cos^{m+1}\theta} \cos{(n+1)\theta}d\theta + \frac{m+1}{n+1} \int_0^x \cos^m{\theta} \cos{n\theta}$\\
+
+$\therefore$ \qquad $\displaystyle \frac{m+n+2}{n+1} I_{m+1,n+1}(x) = \frac{1}{n+1} \cos^{m+1}x \sin{(n+1)x} = \frac{m+1}{n+1} I_{m,n}(x)$\\
+
+$\therefore$ \qquad $\displaystyle I_{m+1,n+1}(x) = \frac{\cos^{m+1}x \sin{(n+1)x}}{m+n+2} + \frac{m+1}{m+n+2} I_{m,n}(x)$\\
+
+$\therefore$ \qquad $\displaystyle I_{4,3}\left(\frac{\pi}{2}\right) = \frac{\cos^4{\frac{\pi}{2}} \sin{3 \cdot \frac{\pi}{2}}}{3+2+2} +\frac{3+1}{3+2+2} I_{3,2}\left(\frac{\pi}{2}\right) = 0 + \frac{4}{7} \cdot \frac{\cos^3{\frac{\pi}{2}} \sin{2 \cdot \frac{\pi}{2}}}{2+1+2} + \frac{4}{7} \times \frac{3}{5} \times I_{2,1}\left(\frac{\pi}{2}\right)$\\
+
+\hskip 2.465cm $\displaystyle = 0 + 0 + \frac{4}{7} \times \frac{3}{5} \times \frac{\cos^2{\frac{\pi}{2}} \sin{\frac{\pi}{2}}}{1+0+2} + \frac{4}{7} \times \frac{3}{5} \times \frac{2}{3} \times I_(1,0) = 0+0+0+\frac{4}{7} \times \frac{3}{5} \times \frac{2}{3} \times \frac{1}{1} = \frac{4 \cdot 3 \cdot 2 \cdot 1}{7 \cdot 5 \cdot 3 \cdot 1}$\\
+
+$\therefore$ \qquad $\displaystyle I_{3,4}\left(\frac{\pi}{2}\right) = 0 + \frac{3}{7} \times I_{2,3}\left(\frac{\pi}{2}\right) = 0 + 0 + \frac{3}{7} \times \frac{2}{5} \times I_{1,2} \left(\frac{\pi}{2}\right) = 0 + 0 + 0 + \frac{3}{7} \times \frac{2}{5} \times \frac{1}{3} \times I_{0,1}\left(\frac{\pi}{2}\right) = \frac{3 \cdot 2 \cdot 1}{7 \cdot 5 \cdot 3}$\\
+
+$\therefore$ \qquad When $m>n$ and n is odd\\ 
+
+\hskip 1cm $\displaystyle I_{m,n}\left(\frac{\pi}{2}\right) = \frac{m \times (m-1) \times (m-2) \times \cdots}{(m+n) \times (m+n-2) \times (m+n+4) \times \cdots} I_{0,1} \left( \frac{\pi}{2} \right) = \frac{m!}{(m+n)!!} I_{0,1} \left( \frac{\pi}{2} \right)$\\
+
+\hskip 1cm When $m>n$ and n is even\\
+
+\hskip 1cm $\displaystyle I_{m,n}\left(\frac{\pi}{2}\right) = \frac{m \times (m-1) \times (m-2) \times \cdots}{(m+n) \times (m+n-2) \times (m+n+4) \times \cdots} I_{0,0} \left( \frac{\pi}{2} \right) = \frac{m!}{(m+n)!!} I_{0,0} \left( \frac{\pi}{2} \right)$\\
+
+\hskip 1cm When $m=n$\\
+
+\hskip 1cm $\displaystyle I_{m,n}\left(\frac{\pi}{2}\right) = \frac{m \times (m-1) \times (m-2) \times \cdots}{2m \cdot 2(m-1) \times 2(m-2) \times \cdots} \frac{\pi}{2} = \frac{\pi}{2^{m+1}}$\\
+
+\hskip 1cm When $m<n$\\
+
+\hskip 1cm $\displaystyle I_{m,n}\left(\frac{\pi}{2}\right) = \frac{m \times (m-1) \times (m-2) \times \cdots \times 1}{(m+n) \times (m+n-2) \times (m+n+4) \times \cdots \times (n - m + 2)} I_{0,n-m} \left(\frac{\pi}{2}\right) = \frac{m!(n-m)!!}{(m+n)!!} \times \frac{\sin{\frac{(n-m)\pi}{2}}}{n-m}$\\
+
+\vskip 3cm
+
+\textcolor[rgb]{0.00,0.00,0.50}{\#3}\\
+
+(a)\\
+
+$\displaystyle I_{m,n} = \int_0^1 x^m (1-x)^n dx = \left[\frac{1}{m+1} \cdot x^{m+1} \cdot (1-x)^n\right]_0^1 - \int_0^1 -\frac{1}{m+1} \cdot x^{m+1} \cdot n(1-x)^{n-1} dx$\\
+
+\hskip 0.777cm $\displaystyle = \frac{n}{m+1} \int_0^1 x^{m+1} \cdot (1-x)^{n-1} dx = -\frac{n}{m+1} \int_0^1 x^m (1-x)^n dx + \frac{n}{m+1} \int_0^1 x^ (1-x)^{n-1} dx$\\
+
+$\therefore$ \qquad $\displaystyle \frac{m+n+1}{n}I_{m,n} = \int_0^1 x^m (1-x)^{n-1} dx = \left[-\frac{1}{n} (1-x)^n x^m\right]_0^1 - \int_0^1 -\frac{1}{n} (1-x)^n \cdot mx^m-1 dx$\\
+
+\hskip 3.485cm $\displaystyle = \frac{m}{n} \int_0^1 (1-x)^n x^{m-1} dx$\\
+
+\hskip 3.485cm $\displaystyle = \frac{m}{n} \left[\int_0^1 (1-x)^{n-1} x^{m-1} dx - \int_0^1 (1-x)^{n-1} x^m dx\right]$\\
+
+$\therefore$ \qquad $\displaystyle \frac{(m+n)(m+n+1)}{m \cdot n} I_{m,n} = \frac{m+n}{m} \int_0^1 x^m (1-x)^{n-1} dx = \int_0^1 (1-x)^{n-1} x^{m-1} dx$\\
+
+$\therefore$ \qquad $\displaystyle I_{m,n} = \frac{m \cdot n}{(m+n)(m+n+1)} I_{m-1,n-1}$\\
+
+(b)\\
+
+i.\\
+
+$\because$ \qquad $\int_0^1 x^n (1-x)^n f^{(2n)}(x) dx = \left[x^n (1-x)^n f^{(2n-1)}(x)\right]_0^1 - \int_0^1\left[x^n (1-x)^n \right]' f^{(2n-1)} dx$\\
+
+\hskip 4.87653cm $\displaystyle = \int_0^1 \left[x^n (1-x)^n\right]' f^{(2n-1)}(x) dx$\\
+
+\hskip 4.87653cm $\displaystyle = \cdots$
+
+\hskip 4.87653cm $\displaystyle = \int_0^1 \left[x^n (1-x)^n\right]^{(2n)} f(x) dx$\\
+
+According to binomial theorem, $\displaystyle x^n (1-x)^n = \sum \limits_{i = 0}^n (-x)^i \cdot x^n \cdot C_i^n$\\
+
+For $i < n$ \quad $\left[(-x)^i \cdot x^n \cdot C_i^n \right]^{(2n)} = 0$\\
+
+For $i = n$ \quad $\left[(-1)^n \cdot x^{2n} \cdot C_n^n\right]^{(2n)} = (-1)^n \cdot (2n)!$\\
+
+$\therefore$ \qquad $\displaystyle \int_0^1 x^n (1-x)^nf^{(2n)}(x) dx = (-1)^n(2n)! \int_0^1 f(x) dx$\\
+
+ii.\\
+
+$\because$ \qquad $f^{(2n)}(x)$ is bounded.\\
+
+$\therefore$ \qquad $\displaystyle \left|f^{(2n)}(x)\right| \leq \sup \limits_{x \in [0,1]} \left|f^{(2n)}(x)\right|$\\
+
+According to (a), $\displaystyle \int_0^1 x^n (1-x)^n =  \frac{(n!)^2}{(2n+1)!}$\\
+
+$\therefore$ \qquad $\displaystyle \left|(-1)(2n)! \int_0^1 f(x) dx\right| = (2n)! \left|\int_0^1 f(x) dx\right| = \left|\int_0^1 x^n (1-x)^n f^{(2n)}(x) dx\right|$\\
+
+\hskip 4.59cm $\displaystyle \leq \int_0^1 x^n (1-x)^n \sup \limits_{x \in [0,1]} \left|f^{(2n)}(x)\right|dx$\\
+
+\hskip 4.59cm $\displaystyle \leq \frac{(n!)^2}{(2n+1)!} \sup \limits_{x \in [0,1]} \left|f^{(2n)}(x)\right|dx$\\
+
+$\therefore$ \qquad $\displaystyle \int_0^1 f(x) dx \leq \frac{(n!)^2}{(2n+1)!(2n)!} \sup \limits_{x \in [0,1]} \left|f^{(2n)}(x)\right|$
+
+\vskip 2cm
+
+\textcolor[rgb]{0.00,0.00,0.50}{\#4}\\
+
+(a)\\
+
+$\because$ \qquad $\displaystyle f(x) = 1 + \int_0^x \log{(1 + f(t)^2)}$\\
+
+$\therefore$ \qquad By F.T.C, \quad $\displaystyle f(0) = 1$ \quad $f'(x) = 0 + \log{(1 + f(x)^2)} = \log{(1 + f(x)^2)}$\\
+
+(b)\\
+
+i.\\
+
+Set $\displaystyle f(x) = \log{(1 + x^2)}$, then we can get:\\
+
+$f'(x) = \displaystyle \left[\log{(1 + x^2)}\right]' = \frac{2x}{1+x^2}$\\
+
+By M.V.T. \quad $\displaystyle \frac{f(y) - f(z)}{y - z} = f'(w)$ where w is between x and y.\\
+
+$\therefore$ \qquad $\displaystyle \left|f'(x)\right| = \frac{2}{\frac{1}{|x|} + |x|} \leq 1$\\
+
+$\therefore$ \qquad $\displaystyle |f_{n+1}(x) - f_n(x)| = \left|1 + \int_0^x \log{(1 + y^2)} - 1 -\int_0^x \log{(1 + z^2)}\right| $\\
+
+\hskip 3.8cm $\displaystyle = \left| \int_0^x \log{(1 + y^2)} - \int_0^x \log{(1 + z^2)}\right|$\\
+
+\hskip 3.8cm $\displaystyle \leq |y-x|$\\
+
+ii.\\
+
+If there exists a constant $K > 0$ s.t.\\
+
+$\displaystyle |f_n(x) - f_{n-1}(x)| \leq \frac{K x^{n-1}}{(n-1)!}$ for any $x \geq 0$\\
+
+Then according to ii. \quad $\displaystyle |f_{n+1}(x) - f_n(x)| \leq \left|1 + \int_0^x \log{(1 + f_n(t)^2)} dt - 1 - \int_0^x \log{(1 + f_{n-1}(t)^2)} dt\right|$\\
+
+\hskip 6.5cm $\displaystyle \leq \int_0^x \left|f_n(t) - f_{n-1}(t)\right| dt \leq \int_0^x \frac{K t^{n-1}}{(n-1)!} dt = \frac{K x^n}{n!}$\\
+
+iii.\\
+
+$\displaystyle \forall \epsilon > 0$ \quad $\displaystyle \exists N = \max\left\{\frac{x^{x+1}}{x!\frac{\epsilon}{nK}}, x\right\}$ s.t.\\
+
+$\displaystyle m = 2n > N \Rightarrow |f_m(x) - f_n(x)| \leq |f_m(x) - f_{m-1}(x)| + |f_{m-1}(x) - f_{m-2}(x)| + \cdots + |f_{n+1}(x) - f_{n}(x)|$\\
+
+\hskip 5cm $\displaystyle \leq K \sum \limits_{i = n}^{m-1} \frac{x^i}{i!} = K \sum \limits_{i = n}^{m-1} \frac{x \cdot x \cdot x \cdots x}{1 \cdot 2 \cdot 3 \cdots x} \cdot \frac{x}{x+1} \cdot \frac{x}{x+2} \cdots \frac{x}{i} \leq K \sum \limits_{i = n}^{m-1} \frac{x^{x+1}}{x!}
+\cdot \frac{1}{i}$\\
+
+\hskip 5cm $\displaystyle \leq K \sum \limits_{i = n}^{m-1}\frac{\epsilon}{nK} = \epsilon$\\
+
+$\therefore$ \qquad $\{f_n(x)\}$ is Cauchy. It converges to $f_{\infty}(x)$ when x goes to infinity.\\
+
+iv.\\
+
+According to i. and  iii.\\
+
+$\lim \limits_{n \to \infty} \left|\int_0^x \log{(1 + f_n(t)^2)} dt - \int_0^x \log{(1+f_{\infty}(t)^2)} dt\right| \leq \lim \limits_{n \to \infty}\left|f_n(x) - f_{\infty}(x)\right| = 0$\\
+
+$\therefore$ \qquad $\left|\int_0^x \log{(1 + f_n(t)^2)} dt - \int_0^x \log{(1+f_{\infty}(t)^2)} dt\right|$ goes to 0 when n goes to infinity.\\
+
+\vskip 2cm
+
+\end{document}
