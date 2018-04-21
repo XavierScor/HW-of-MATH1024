@@ -1,0 +1,254 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{geometry}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{graphicx}
+\geometry{left=1.5cm}
+\author{GONG,Xianjin}
+\title{Homework 6 of Honor Calculus}
+
+\begin{document}
+\maketitle
+
+\vspace{3.5mm}
+
+\textcolor[rgb]{0.00,0.00,0.50}{\#1}\\
+
+(a)\\
+
+We know that:\\
+
+$\displaystyle \int_0^\infty \frac{\sin{x}}{x^p}dx = \int_0^1 \frac{\sin{x}}{x^p}dx + \int_1^\infty \frac{\sin{x}}{x^p}$\\
+
+\vskip 1cm
+
+For the second term on the R.H.S.\\
+
+$\displaystyle \int_1^\infty \frac{\sin{x}}{x^p}dx = -\int_1^\infty \frac{1}{x^p}d(\cos{x}) = \lim \limits_{b \to \infty}\left[-\frac{\cos{x}}{x^p}\right] - \lim \limits_{b \to \infty} \int_1^b p\frac{\cos{x}}{x^{p+1}}dx$\\
+
+$\because$ \qquad $\displaystyle \left|\frac{\cos{x}}{x^{p+1}}\right| < \frac{1}{x^{p+1}}$ \qquad $\displaystyle \int_1^\infty \frac{1}{x^{p+1}}dx = \lim \limits_{b \to \infty} \left[-\frac{1}{px^p}\right]_1^b = \lim \limits_{b \to \infty} \left[\frac{1}{p} - \frac{1}{pb^p}\right] = \frac{1}{p}$\\
+
+$\therefore$ \qquad $\displaystyle \int_1^\infty \frac{1}{x^{p+1}}dx$ converges\\
+
+By Comparison Test, \quad $\displaystyle \int_1^\infty p\frac{\cos{x}}{x^{p+1}}dx$ converges\\
+
+\vskip 1cm
+
+For the first term on the R.H.S.\\
+
+First set $\displaystyle f(x) = \sin{x} - \cos{1} \cdot x$ \quad then we can get:\\
+
+$\displaystyle f'(x) = \cos{x} - \cos{1} \geq 0$ for $x \in [0,1]$ and $f(0) = 0$\\
+
+$\therefore$ \qquad $\sin{x} \geq \cos{1} \cdot x$ when $x \in [0,1]$\\
+
+$\therefore$ \qquad $\displaystyle \frac{\sin{x}}{x^p} \geq \cos{1} \cdot \frac{1}{x^{p-1}}$ when $x \in [0,1]$\\
+
+$\therefore$ \qquad $\displaystyle \int_0^1 \frac{\sin{x}}{x^p}dx \geq \cos{1} \cdot \int_0^1 \frac{1}{x^{p-1}}dx = \cos{1} \cdot \lim \limits_{a \to 0^+} \left[\frac{1}{2-p} \cdot x^{2-p}\right]_a^1$\\
+
+\hskip 2.87cm $\displaystyle = \cos{1} \cdot \lim \limits_{a \to 0^+} \left[\frac{1}{2-p} - \frac{1}{2-p} \cdot a^{2-p}\right]$  $(p \neq 2)$\\
+
+when $p=2$ \quad $\displaystyle \int_0^1 \frac{\sin{x}}{x^p}dx \geq \cos{1} \cdot \int_0^1 \frac{1}{x}dx$ which diverges\\
+
+when $p>2$ \quad $\displaystyle \cos{1} \cdot \lim \limits_{a \to 0^+} \left[\frac{1}{2-p} - \frac{1}{2-p} \cdot a^{2-p}\right]$ diverges, so $\displaystyle \int_0^1 \frac{\sin{x}}{x^p}dx$ diverges\\
+
+when $p<2$ \quad set $x=\frac{1}{t}$ \quad so $dx = -\frac{1}{t^2}dt$\\
+
+\hskip 2.25cm $\displaystyle \int_0^1 \frac{\sin{x}}{x^p}dx = -\int_\infty^1\frac{\sin{\frac{1}{t}}}{\frac{1}{t^p}} \cdot \frac{1}{t^2}dt = \int_1^\infty \frac{\sin{\frac{1}{t}}}{t^{2-p}}dt$\\
+
+\hskip 2.25cm it is clear that $|\sin{\frac{1}{t}}| < 1$, $(\frac{1}{t})^{2-p}$ is monotone, and $\lim \limits_{t \to \infty} (\frac{1}{t})^{2-p} = 0$\\
+
+\hskip 2.25cm so by Dirichlet Test\\
+
+\hskip 2.25cm $\displaystyle \int_0^1 \frac{\sin{x}}{x^p}dx$ converges\\
+
+\vskip 1cm
+
+$\therefore$ \qquad $p \in (0,2)$\\
+
+(b)\\
+
+Similarly, we know that:\\
+
+$\displaystyle \int_0^\infty \left|\frac{\sin{x}}{x^p}\right|dx = \int_0^1 \frac{\sin{x}}{x^p}dx + \int_1^\infty \left|\frac{\sin{x}}{x^p}\right|dx$\\
+
+According to (a), in order to let $\int_0^1 \frac{\sin{x}}{x^p}dx$ converge, $p$ should be within $(0,2)$\\
+
+\vskip 1cm
+
+For the second term on the R.H.S.\\
+
+when $0<p<1$ \quad we know that $\left|\frac{\sin{x}}{x^p}\right| \geq \left|\frac{\sin{x}}{x}\right|$
+
+\hskip 2.9cm $\because$ \qquad $\displaystyle \int_1^{n\pi} \left|\frac{\sin{x}}{x}\right|dx \geq \int_\pi^{n\pi} \left|\frac{\sin{x}}{x}\right| = \sum \limits_{k=2}^n \int_{(k-1)\pi}^{k\pi} \left|\frac{\sin{x}}{x}\right| \geq \sum \limits_{k = 2}^n \frac{1}{k\pi} \int_{(k-1)\pi}^{k\pi} |\sin{x}|dx$\\
+
+\hskip 6.27cm $\displaystyle \geq \sum \limits_{k=2}^n \frac{1}{k\pi} \geq \frac{1}{\pi}\left(\frac{1}{2} + \frac{1}{3} + \cdots + \frac{1}{n}\right)$ which diverges\\
+
+\hskip 2.9cm $\therefore$ \qquad $\displaystyle \int_1^\infty \left|\frac{\sin{x}}{x}\right|dx$ diverges \qquad $\therefore$ \qquad $\displaystyle \int_1^\infty \left|\frac{\sin{x}}{x^p}\right|dx$ diverges\\
+
+when $1<p<2$ \quad we know that $\left|\frac{\sin{x}}{x^p}\right| \leq \frac{1}{x^p}$\\
+
+\hskip 2.9cm $\because$ \qquad $\displaystyle \int_1^\infty \frac{1}{x^p}dx = \lim \limits_{b \to \infty} \left(\frac{1}{1-p} \cdot b^{1-p} - \frac{1}{1-p}\right) = \frac{1}{p-1}$\\
+
+\hskip 2.9cm $\therefore$ \qquad $\displaystyle \int_1^\infty \frac{1}{x^p}dx$ converges \qquad $\therefore$ \qquad $\displaystyle \int_1^\infty \left|\frac{\sin{x}}{x^p}\right|dx$ converges\\
+
+\vskip 1cm
+
+$\therefore$ \qquad $p \in (1,2)$\\ 
+
+\vskip 3cm
+
+\textcolor[rgb]{0.00,0.00,0.50}{\#2}\\
+
+$\because$ \qquad $f(x+T) = f(x)$ for any $x \in R$ \quad and \quad $f(x) \neq 0$\\
+
+$\therefore$ \qquad $\displaystyle \int_{kT}^{(k+1)T} \left|f(x)\right|dx$ equals to a constant which if greater than $0$ for any $k \in Z$, set it as $c$\\
+
+$\therefore$ \qquad $\exists n, m  \in Z^+$ s.t. $n>m$ and $mT > 1$\\
+
+\hskip 1cm $\displaystyle \int_{mT}^{nT} \left|\frac{f(x)}{x}\right|dx = \sum \limits_{k=m+1}^n \int_{(k-1)T}^{kT} \left|\frac{f(x)}{x}\right|dx \geq \sum \limits_{k=m+1}^n \frac{1}{kT} \cdot c = \frac{c}{T} \left(\frac{1}{m} + \frac{1}{m+1} + \cdots + \frac{1}{n}\right)$ which diverges\\
+
+$\therefore$ \qquad $\displaystyle \int_{mT}^{nT} \left|\frac{f(x)}{x}\right|dx$ diverges \qquad $\displaystyle \int_1^\infty \left|\frac{f(x)}{x}\right|dx$ diverges\\
+
+\vskip 6cm
+
+\textcolor[rgb]{0.00,0.00,0.50}{\#3}\\
+
+(a)\\
+
+$\displaystyle \sum \limits_{n=1}^\infty \frac{1}{n(n+k)} = \lim \limits_{N \to \infty} \sum \limits_{n=1}^N \left(\frac{1}{n} - \frac{1}{n+k}\right) \cdot \frac{1}{k} = \lim \limits_{N \to \infty} \left[\sum \limits_{n=1}^k \frac{1}{n} + \sum \limits_{n=k+1}^N \frac{1}{n} - \sum \limits_{n=1}^N \frac{1}{n+k}\right] \cdot \frac{1}{k}$\\
+
+\hskip 6.7cm $\displaystyle = \lim \limits_{N \to \infty} \left[\sum \limits_{n=1}^k \frac{1}{n} + \sum \limits_{n=k+1}^N \frac{1}{n} - \sum \limits_{n=k+1}^{N+k} \frac{1}{n}\right] \cdot \frac{1}{k}$\\
+
+\hskip 6.7cm $\displaystyle = \lim \limits_{N \to \infty} \left[\sum \limits_{n=1}^k \frac{1}{n} - \sum \limits_{n=k+1}^{n+k} \frac{1}{n}\right] \cdot \frac{1}{k}$\\
+
+\hskip 6.7cm $\displaystyle = \frac{1}{k} \sum \limits_{n=1}^k \frac{1}{n} - \frac{1}{k} \lim \limits_{N \to \infty} \sum \limits_{n=N+1}^{N+k} \frac{1}{n} = \frac{1}{k} \sum \limits_{n=1}^k \frac{1}{n}$\\
+
+(b)\\
+
+According to the homework from the last semester, we know that:\\
+
+$\displaystyle 3^{n-1} \sin^3{\frac{x}{3^n}} = \frac{1}{4} \left(3^n \sin{\frac{x}{3^n}} - 3^{n-1} \cdot \sin{\frac{x}{3^{n-1}}}\right)$\\
+
+$\therefore$ \qquad $\displaystyle \sum \limits_{n=1}^\infty 3^{n-1} \sin^3{\frac{x}{3^n}} = \frac{1}{4} \sum \limits_{n=1}^\infty \left(3^n \sin{\frac{x}{3^n}} - 3^{n-1} \cdot \sin{\frac{x}{3^{n-1}}}\right) = \frac{1}{4} \lim \limits_{N \to \infty} \left(3^N \sin{\frac{x}{3^N}} - 3^0 \sin{\frac{x}{3^0}}\right)$\\
+
+\hskip 9.5cm $\displaystyle = \frac{1}{4} \left(x \lim \limits_{N \to \infty} \frac{\sin{\frac{x}{3^N}}}{\frac{x}{3^N}} - 1 \cdot \sin{\frac{x}{1}}\right)$\\
+
+\hskip 9.5cm $\displaystyle = \frac{1}{4} (x - \sin{x})$\\
+
+\vskip 3cm
+
+\textcolor[rgb]{0.00,0.00,0.50}{\#4}\\
+
+(a)\\
+
+First set $f(x) = \frac{1}{x \cdot \log^2{x}}$ \quad we know that $f'(x) = - \frac{(\log{x} + 2) \log{x}}{(x \cdot \log^2{x})^2} < 0$ when $x>1$\\
+
+$\because$ \qquad $\displaystyle \int_2^\infty f(x)dx = \int_2^\infty \frac{1}{\log^2{x}}d(\log{x}) = \int_{\log{2}}^\infty \frac{1}{x^2}dx = \lim \limits_{b \to \infty} \left[-\frac{1}{x}\right]_{\log{2}}^\infty = \frac{1}{\log{2}}$\\
+
+$\therefore$ \qquad $\displaystyle \int_2^\infty f(x)dx$ converges \qquad $\therefore$ \qquad $\displaystyle \sum \limits_{n=1}^\infty \frac{1}{(n+1)(\log{(n+1)})^2}$ converges\\
+
+$\displaystyle error = \left|\sum \limits_{n=1}^\infty \frac{1}{(n+1) (\log{(n+1)})^2} - \sum \limits_{n=1}^{100} \frac{1}{(n+1)(\log{(n+1)})^2}\right| \approx \left|\int_2^\infty f(x)dx - \int_2^{101}f(x)dx\right| = \frac{1}{\log{101}}$\\
+
+(b)\\
+
+$\because$ \qquad $\displaystyle \frac{1}{(n+1)\log{(n+2)}} > \frac{1}{(n+2) \log{(n+2)}}$\\
+
+if we set $f(x) = \frac{1}{x \log{x}}$\\
+
+$\displaystyle \int_e^\infty f(x)dx = \int_3^\infty \frac{1}{\log{x}}d(\log{x}) = \int_{\log{3}}^\infty \frac{1}{x}dx$ which diverges\\
+
+$\therefore$ \qquad $\sum \limits_{n=1}^\infty \frac{1}{(n+2) \log{(n+2)}}$ diverges\\
+
+$\therefore$ \qquad $\sum \limits_{n=1}^\infty \frac{1}{(n+1) \log{(n+2)}}$ diverges\\
+
+(c)\\
+
+$\because$ \qquad $\displaystyle \cos{x} = 1 -\frac{x^2}{2!} + \frac{x^4}{4!} + o(x^4)$ \qquad $\lim \limits_{x \to 0} \frac{\cos{x} - \left(1 - \frac{x^2}{2!}\right)}{x^4} = \frac{1}{4!} > 0$\\
+
+So for sufficiently small $x$, we have $\cos{x} > 1 - \frac{x^2}{2}$\\
+
+$\because$ \qquad $\forall n \in Z^+$ \quad $\displaystyle \left(1 - \cos{\frac{1}{n}}\right) > 0$ \qquad $\therefore$ \qquad $\displaystyle \sum \limits_{n=1}^N \left(1 - \cos{\frac{1}{n}}\right)$ is increasing\\
+
+So there exists $N$ s.t. $\frac{1}{n} > N \Rightarrow \cos{\frac{1}{n}} > 1 - \frac{1}{2n^2}$\\ 
+
+$\therefore$ \qquad $\displaystyle \sum \limits_{n=1}^\infty \left(1 - \cos{\frac{1}{n}}\right) = \sum \limits_{n=1}^N \left(1 - \cos{\frac{1}{n}}\right) + \sum \limits_{n=N+1}^\infty \left(1 - \cos{\frac{1}{n}}\right) < \sum \limits_{n=1}^N \left(1 - \cos{\frac{1}{n}}\right) + \sum \limits_{n=N+1}^\infty \left(1 - 1 \frac{1}{2n^2}\right)$\\
+
+\hskip 10.08cm $\displaystyle \leq \sum \limits_{n=1}^N \left(1 - \cos{\frac{1}{n}}\right) + \frac{\pi^2}{12}$\\
+
+$\therefore$ \qquad $\displaystyle \sum \limits_{n=1}^\infty \left(1 - \cos{\frac{1}{n}}\right)$ converges\\
+
+$\displaystyle error = \left| \sum \limits_{n=1}^\infty \left(1 - \cos{\frac{1}{n}}\right) - \sum \limits_{n=1}^{100} \left(1 - \cos{\frac{1}{n}}\right)\right| = \sum \limits_{n=101}^\infty \left(1 - \cos{\frac{1}{n}}\right) \leq \sum \limits_{n = 101}^\infty \frac{1}{2n^2} \approx \frac{1}{2} \int_101^\infty \frac{1}{x^2}dx = \frac{1}{202}$\\
+
+\vskip 3cm
+
+\textcolor[rgb]{0.00,0.00,0.50}{\#5}\\
+
+(a)\\
+
+$\because$ \qquad $f'(x) < 0$ \qquad $\therefore$ \qquad $\displaystyle \sum \limits_{k=1}^{n-1} f(k) - \sum \limits_{k=1}^{n-1} \frac{f(k) + f(k+1)}{2} = \sum \limits_{k=1}^{n-1} \frac{f(k) - f(k+1)}{2} > 0$\\
+
+$\therefore$ \qquad $\displaystyle \sum \limits_{k=1}^{n-1} f(k) > \sum \limits_{k=1}^{n-1} \frac{f(k) + f(k+1)}{2}$\\
+
+By M.V.T.\\
+
+$\because$ \qquad $f'(x) < 0$ \qquad $f^{(2)}(x) > 0$ \qquad $\therefore$ \qquad $f(k+1) - f(k) = f'(\xi)$\\
+
+where $\xi$ is between $k$ and $k+1$\\
+
+Set $g(x) = [f(k+1) - f(k)](x-k) + f(k)$ \qquad $h(x) = g(x) - f(x)$\\
+
+then $h'(x) = f(k+1) - f(k) - f'(x) = f'(\xi) - f'(x)$\\
+
+when $x \in [k, \xi)$ \quad $h'(x) > 0$\\
+
+when $x \in [\xi, k+1]$ \quad $h'(x) \leq 0$\\
+
+besides, $h(k) = h(k+1) = 0$ \qquad $\therefore$ \qquad $h(x) > 0$ when $x \in [k, k+1]$\\
+
+$\therefore$ \qquad $\displaystyle \int_k^{k+1} g(x)dx > \int_k^{k+1} f(x)dx$\\
+
+It is intuitive that $\displaystyle \int_k^{k+1} g(x)dx = \frac{f(k) + f(k+1)}{2}$\\
+
+$\therefore$ \qquad $\displaystyle \frac{f(k) + f(k+1)}{2} > \int_k^{k+1}f(x)dx$\\
+
+$\therefore$ \qquad $\displaystyle \sum \limits_{k=1}^{n-1} \displaystyle \int_k^{k+1} g(x)dx = \frac{f(k) + f(k+1)}{2} \geq \sum \limits_{k=1}^{n-1} \int_k^{k-1}f(x)dx = \int_1^n f(x)dx$\\
+
+$\because$ \qquad $\displaystyle \sum \limits_{k=1}^{n-1} f(k) = \frac{f(1)}{2} + \sum \limits_{k=1}^{n-1} \frac{f(k) + f(k+1)}{2} - \frac{f(n)}{2}$ and $\lim \limits_{n \to \infty} \frac{f(n)}{2} = 0$\\
+
+$\therefore$ \qquad $\displaystyle \sum \limits_{k=1}^\infty \frac{f(k) + f(k+1)}{2}$ converges $\Leftrightarrow$ $\displaystyle \sum \limits_{k=1}^\infty f(k)$ converges\\
+
+By integral test, $\displaystyle \sum \limits_{k=1}^\infty \frac{f(k) + f(k+1)}{2}$ converges $\Leftrightarrow$ $\displaystyle \int_1^\infty f(x)dx$ converges\\
+
+$\therefore$ \qquad They are all equivalent.\\
+
+(b)\\
+
+$\because$ \qquad $f'(x) < 0$ on $[1, +\infty)$ \qquad $\lim \limits_{x \to \infty} f(x) = 0$\\
+
+And by integral test\\
+
+$\displaystyle \sum \limits_{k=1}^{n-1} f(k) = \int_1^n f(x)dx + \gamma + \epsilon_n -f(n)$ where $\gamma \in [0,f(1)]$\\
+
+$\therefore$ \qquad $\displaystyle \lim \limits_{n \to \infty} \left( \sum \limits_{k=1}^{n-1}f(k) - \int_1^nf(x)dx\right) = \gamma$\\
+
+$\therefore$ \qquad for sufficiently large n, $\displaystyle \sum \limits_{k=1}^{n-1}f(k) - \int_1^nf(x)dx$ is bounded, we set its upper bound as $\gamma^*$\\
+
+Besides\\
+
+$\displaystyle \sum \limits_{k=1}^{n-1}f(k) - \int_1^nf(x)dx > \sum \limits_{k=1}^{n-1} \frac{f(k) + f(k+1)}{2} - \int_1^nf(x)dx$\\
+
+$\therefore$ \qquad for sufficiently large n, $\sum \limits_{k=1}^{n-1} \frac{f(k) + f(k+1)}{2} - \int_1^nf(x)dx$ should be bounded by $\gamma^*$ too\\
+
+Besides, $\frac{f(k) + f(k+1)}{2} - \int_k^{k+1}f(x)dx > 0$ according to (a)\\
+
+$\therefore$ \qquad $\sum \limits_{k=1}^{n-1} \frac{f(k) + f(k+1)}{2} - \int_1^nf(x)dx$ should be increasing\\
+
+$\therefore$ \qquad $\sum \limits_{k=1}^{n-1} \frac{f(k) + f(k+1)}{2} - \int_1^nf(x)dx$ converges, so its limit exists.\\
+
+\vskip 3cm
+
+\end{document}

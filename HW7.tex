@@ -1,0 +1,263 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{geometry}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{graphicx}
+\geometry{left=1.5cm}
+\author{GONG,Xianjin}
+\title{Homework 7 of Honor Calculus}
+
+\begin{document}
+\maketitle
+
+\vspace{3.5mm}
+
+\textcolor[rgb]{0.00,0.00,0.50}{\#1}\\
+
+1)\\
+
+Set $a_n = e^{-n}n!$\\
+
+$\because$ \qquad $\displaystyle \frac{a_{n+1}}{a_n} = \frac{n+1}{e} > 1$ when $n \geq 2$\\
+
+$\therefore$ \qquad $\displaystyle n \geq 2 \Rightarrow a_n$ is increasing\\
+
+We also know that $a_n > 0$\\
+
+$\therefore$ \qquad $\displaystyle \lim \limits_{n \to \infty} a_n \neq 0$\\
+
+$\therefore$ \qquad $\displaystyle \sum \limits_{n=1}^\infty a_n$ diverges\\
+
+2)\\
+
+Set $a_n = (-1)^n \frac{n^22^n}{n!}$ \qquad $b_n = \frac{2^n}{n!}$\\
+
+$\because$ \qquad $\displaystyle \left|\frac{a_{n+1}}{a_n}\right| = 2\left(\frac{1}{n^2} + \frac{1}{n}\right) < 1$\\
+
+\hskip 1.1cm $\displaystyle \lim \limits_{n \to \infty} |a_n| = \lim \limits_{n \to \infty} 4 \cdot \frac{n}{n-1} \cdot \frac{2^{n-1}}{(n-2)!} = 0$\\
+
+$\therefore$ \qquad By Leibniz test \quad $\displaystyle \sum \limits_{n=1}^\infty (-1)^n \frac{n^22^n}{n!}$ \quad converges\\
+
+3)\\
+
+First we observe that when $n > 3$, $\frac{2n}{n+1} > \frac{3}{2}$\\
+
+$\therefore$ \qquad $\displaystyle \lim \limits_{n \to \infty} \left(\frac{2n}{n+1}\right)^n > \lim \limits_{n \to \infty} \left(\frac{3}{2}\right)^n$\\
+
+$\because$ \qquad $\displaystyle \frac{3}{2} > 1$ \quad $\displaystyle \lim \limits_{n \to \infty} \left(\frac{3}{2}\right)^n = +\infty$\\
+
+$\therefore$ \qquad $\displaystyle \lim \limits_{n \to \infty} \left(\frac{-2n}{n+1}\right)^n \neq 0$\\
+
+$\therefore$ \qquad $\displaystyle \sum \limits_{n=1}^\infty \left(\frac{-2n}{n+1}\right)^n$ \quad diverges\\
+
+4)\\
+
+Set $a_n = \frac{2^n \cdot n!}{(3n+2)(3n-1)\cdots(5)(2)}$\\
+
+$\because$ \qquad $\displaystyle \frac{a_{n+1}}{a_n} = \frac{2(n+1)}{3n+2} = \frac{2n+2}{3n+2} < 1$ for $n \geq 1$\\
+
+\hskip 1.1cm $\displaystyle 0 \leq a_n = \frac{1}{2} \prod_{k=1}^n \frac{2k}{3k+2} \leq \frac{1}{2} \prod_{k=1}^n \frac{3}{2} = \frac{1}{2} \cdot \left(\frac{2}{3}\right)^n$ for $n \geq 1$\\
+
+\hskip 1.1cm $\displaystyle \lim \limits_{n \to \infty} \frac{1}{2} \cdot \left(\frac{2}{3}\right)^n = 0$\\
+
+$\therefore$ \qquad $\displaystyle \lim \limits_{n \to \infty} a_n = 0$\\
+
+$\therefore$ \qquad By Leibniz test \quad $\sum \limits_{n=1}^\infty (-1)^n a_n$ \quad converges\\
+
+\vskip 3cm
+
+\textcolor[rgb]{0.00,0.00,0.50}{\#2}\\
+
+$\because$ \qquad $\displaystyle \lim \limits_{n \to \infty} (x_{n+1} - x_n) = 1$\\
+
+$\therefore$ \qquad $\exists N$ \quad $\forall \epsilon > 0$ \quad s.t. \quad $n>N \Rightarrow |(x_{n+1} - x_n) - 1| < \epsilon$\\
+
+set $\epsilon = min\{\frac{1}{2}, \frac{T-1}{4}\}$ \quad then $\frac{1}{2} < x_{n+1} - x_n < \frac{3}{4} + \frac{T}{4} < T$\\
+
+when $p > 1$\\
+
+$\displaystyle \sum \limits_{n=1}^\infty \frac{|f(x_n)|}{{x_n}^p} = \sum \limits_{n=1}^N \frac{|f(x_n)|}{{x_n}^p} + \sum \limits_{n=N+1}^\infty \frac{|f(x_n)|}{{x_n}^p} \leq \sum \limits_{n=1}^N \frac{|f(x_n)|}{{x_n}^p} + \sum \limits_{n=N+1}^\infty 2\frac{\sup \limits_{[0,T]}|f|}{\left([x_N]+n-N\right)^p}$\\
+
+$\because$ \qquad $\displaystyle \sum \limits_{n=N+1}^\infty \frac{1}{\left([x_N]+n-N\right)^p}$ \quad is the partial sum of $\displaystyle \sum \limits_{n \to \infty}^\infty \frac{1}{n^p}$ \quad which converges\\
+
+$\therefore$ \qquad $\displaystyle \sum \limits_{n=N+1}^\infty 2\frac{\sup \limits_{[0,T]}|f|}{[x_N]+n-N}$ \quad converges\\
+
+$\therefore$ \qquad $\displaystyle \sum \limits_{n=1}^\infty \frac{|f(x_n)|}{{x_n}^p}$ converges\\
+
+when $p \leq 1$ \quad for each interval $(kT, (k+1)T)$ there must be at least one element of $\{x_n\}$ in it\\
+
+Combine them as a new series as $\{y_k\}_{k=1}^\infty$\\
+
+$\displaystyle \sum \limits_{n=1}^\infty \frac{|f(x_n)|}{{x_n}^p} \geq 
+\frac{|f(y_1)|}{{y_1}^p} + \frac{|f(y_2)|}{{y_2}^p} + \cdots \geq \inf \limits_{(0,T)}|f| \left(\frac{1}{{y_1}^p} + \frac{1}{{y_2}^p} + \cdots \right)\\$\\
+
+\hskip 5.77cm$\displaystyle \geq \inf \limits_{(0,T)}|f| \left(\frac{1}{{T}^p} + \frac{1}{{2T}^p} + \cdots \right)$ \quad which diverges\\
+
+$\therefore$ \qquad $\displaystyle \sum \limits_{n=1}^\infty \frac{|f(x_n)|}{{x_n}^p}$ \quad diverges\\
+
+$\therefore$ \qquad $p > 1$\\
+
+\vskip 2.8cm
+
+\textcolor[rgb]{0.00,0.00,0.50}{\#3}\\
+
+(a)\\
+
+$\because$ \qquad $\displaystyle \lim \limits_{n \to \infty} n(1 - \left|\frac{a_{n+1}}{a_n}\right|) = p$ \qquad $therefore$ \qquad $\exists N$ \quad $\forall \epsilon > 0$ \quad s.t. \quad $\displaystyle n>N \Rightarrow \left|n(1-\left|\frac{a_{n+1}}{a_n}\right|) - p\right| < \epsilon$\\
+
+when $p > 1$\\
+
+set $\epsilon = \frac{p-1}{2}$ \quad then $\left|\frac{a_{n+1}}{a_n}\right| < 1 - \frac{p+1}{2n} + o(\frac{1}{n})$\\
+
+set $b_n = \frac{1}{n^{\frac{p+1}{2}}}$\\
+
+$\because$ \qquad $\displaystyle \frac{b_{n+1}}{b_n} = 1 - \frac{p+1}{2n} + o(\frac{1}{n})$ and $\displaystyle \sum \limits_{n=1}^\infty b_n$ \quad converges\\
+
+$\therefore$ \qquad By comparison test \quad $\displaystyle \sum \limits_{n=1}^\infty a_n$ \quad converges\\
+
+when $0 < p < 1$\\
+
+set $\epsilon = \frac{1-p}{2}$ \quad then $\left|\frac{a_{n+1}}{a_n}\right| > 1 - \frac{p+1}{2n} + o(\frac{1}{n})$\\
+
+use the same $b_n$ as when $p > 1$\\
+
+However, since $p < 1$, sum of $b_n$ diverges\\
+
+$\therefore$ \qquad by comparison test \quad $\displaystyle \sum \limits_{n=1}^\infty a_n$ \quad also diverges\\
+
+(b)\\
+
+According to (a), set $\epsilon = \frac{p}{2}$ \quad then $\displaystyle \frac{a_{n+1}}{a_n} = \left|\frac{a_{n+1}}{a_n}\right| < 1 - \frac{p}{2n} + o(\frac{1}{n}) < 1$\\
+
+$\therefore$ \qquad $a_n$ is decreasing\\
+
+Set $\displaystyle b_n = \frac{1}{n^{\frac{p}{2}}}$ \quad s.t. \quad $\displaystyle \frac{b_{n+1}}{b_n} = 1 - \frac{p}{2n} + o(\frac{1}{n})$\\
+
+$\therefore$ \qquad $0 < a_n < C \cdot b_n$ where $C$ is a constant.\\
+
+$\because$ \qquad $b>0$\\
+
+$\therefore$ \qquad $\displaystyle \lim \limits_{n \to \infty} b_n = 0$\\
+
+$\therefore$ \qquad $\displaystyle \lim \limits_{n \to \infty} a_n = 0$\\
+
+$\therefore$ \qquad $\displaystyle \sum \limits_{n=1}^\infty a_n$ \quad converges\\
+
+(c)\\
+
+According to (a)\\
+
+In order to let $\displaystyle \sum \limits_{n=1}^\infty \frac{a(a+1)(a+2)\cdots(a+n)}{b(b+1)(b+2)\cdots(b+n)}$ converges\\
+
+$\displaystyle \lim \limits_{n \to \infty} n \left(1 - \frac{a+n+1}{b+n+1}\right) = \lim \limits_{n \to \infty} \frac{(b-a)n}{b+n+1} = b-a > 1$\\
+
+$\therefore$ \qquad $b>a+1$\\
+
+In order to let $\displaystyle \sum \limits_{n=1}^\infty (-1)^n \frac{a(a+1)(a+2)\cdots(a+n)}{b(b+1)(b+2)\cdots(b+n)}$ converges\\
+
+$\displaystyle \lim \limits_{n \to \infty} n \left(1 - \frac{a+n+1}{b+n+1}\right) = \lim \limits_{n \to \infty} \frac{(b-a)n}{b+n+1} = b-a > 0$\\
+
+$\therefore$ \qquad $b>a$\\
+
+\vskip 3cm
+
+\textcolor[rgb]{0.00,0.00,0.50}{\#4}\\
+
+(a)\\
+
+$\displaystyle \sum \limits_{n=1}^N \sum \limits_{k=1}^n(b_n-b_{n+1})a_k + b_{N+1} \sum \limits_{n=1}^{N+1}a_n = \sum \limits_{n=1}^N \sum \limits_{k=1}^n b_na_k - \sum \limits_{n=1}^N \sum \limits_{k=1}^n b_{n+1}a_k + b_{N+1} \sum \limits_{n=1}^{N+1} a_n$\\
+
+\hskip 5.6cm $\displaystyle = \sum \limits_{n=1}^{N+1} \sum \limits_{k=1}^n b_na_k - \sum \limits_{n=1}^N \sum \limits_{k=1}^n b_{n+1}a_k$\\
+
+\hskip 5.6cm $\displaystyle = \sum \limits_{n=1}^{N+1} \sum \limits_{k=1}^n b_na_k - \sum \limits_{n=2}^{N+1} \sum \limits_{k=1}^{n-1} b_{n}a_k$\\
+
+\hskip 5.6cm $\displaystyle = a_1b_1 + \sum \limits_{n=2}^{N+1} b_n(\sum \limits_{k=1}^n a_k - \sum \limits_{k=1}^{n-1} a_k)$\\
+
+\hskip 5.6cm $\displaystyle = \sum \limits_{n=1}^{N+1} a_nb_n$\\
+
+(b)\\
+
+Suppose $\sum a_n$ is bounded by $L$, $b_n$ is monotonic and $\lim \limits_{n \to \infty}b_n = 0$\\
+
+It is obvious that $\lim \limits_{n \to \infty}b_{N+1} \sum \limits_{n+1}^{N+1}a_n = 0$\\
+
+Besides, $|\sum \limits_{n=1}^N \sum \limits_{k=1}^n (b_n-b_{n+1})a_k| \leq |\sum \limits_{n=1}^N L (b_n-b_{n+1})| = |L(b_1-b_{N+1})|$ \qquad $\lim \limits_{N \to \infty} |L(b_1 - b_{N+1})| = |Lb_1|$\\
+
+and $|\sum \limits_{n=1}^N \sum \limits_{k=1}^n (b_n-b_{n+1})L|$ is monotonic increasing\\
+
+$\therefore$ \qquad $\displaystyle |\sum \limits_{n=1}^N \sum \limits_{k=1}^n (b_n-b_{n+1})L|$ converges\\
+
+$\therefore$ \qquad $\displaystyle \sum \limits_{n=1}^N \sum \limits_{k=1}^n (b_n-b_{n+1})a_k$ converges\\
+
+$\therefore$ \qquad according to (a), $\sum a_nb_n$ converges\\
+
+(c)\\
+
+According to Example 4.3.4 $\sum (-1)^n\frac{(2n)!}{(n!)^24^n}$ converges\\
+
+set $f(x) = \left(1+\frac{1}{x}\right)^x$\\
+
+$\displaystyle f'(x) = \left(1+\frac{1}{x}\right)^x\left(\log\left({1+\frac{1}{x}}\right) - \frac{1}{x+1}\right)$\\
+
+set $g(x) = \log\left({1+\frac{1}{x}}\right) - \frac{1}{x+1}$\\
+
+$\displaystyle g'(x) = - \frac{1}{x(x+1)^2} < 0$\\
+
+$\displaystyle \lim \limits_{x \to \infty} g(x) = 0$\\
+
+$\therefore$ \qquad $g(x)>0$ \quad $f'(x) > 0$\\
+
+$\therefore$ \qquad $\displaystyle \left(1 + \frac{1}{n}\right)^n$ is monotonic\\
+
+$\because$ \qquad $\displaystyle \lim \limits_{n \to \infty} \left(1 + \frac{1}{n}\right)^n = e$ \qquad $\therefore$ \qquad $\left(1 + \frac{1}{n}\right)^n$ \quad is bounded\\
+
+$\therefore$ \qquad By Abel test, $\displaystyle \sum \limits_{n=1}^\infty \frac{(2n)!}{(n!)^24^n}\left(-1 - \frac{1}{n}\right)^n$ \quad is bounded\\
+
+\vskip 3.8cm
+
+\textcolor[rgb]{0.00,0.00,0.50}{\#5}\\
+
+(a)\\
+
+According to steps above, we can get:\\
+
+$\displaystyle s_N = (1+\frac{1}{3}+\cdots+\frac{1}{2(p_1+p_2+\cdots+p_{N})-1})-(\frac{1}{2}+\frac{1}{4}+\cdots+\frac{1}{2(q_1+q_2+\cdot+q_N)})$\\
+
+(b)\\
+
+Set $f(x) = \frac{1}{x}$ \quad according to integral test, we know that:\\
+
+$\displaystyle 1 + \frac{1}{2} + \cdots + \frac{1}{n}  = \int_1^n \frac{1}{x} dx + \gamma + \epsilon_n = \log{n} + \gamma + \epsilon_n$  where $\gamma$ is a constant \hskip 3cm$- - - - - -\star$\\
+
+$\therefore$ \qquad $\displaystyle\frac{1}{2} \left(1 + \frac{1}{2} + \cdots + \frac{1}{n}\right) = \frac{1}{2} + \frac{1}{4} + \cdot + \frac{1}{2n} = \frac{1}{2} \log{n} + \frac{1}{2} \gamma + \frac{1}{2}\epsilon_n$
+
+Change $n$ in $\star$ into $2n$ and subtract it with the equation we just got above, we can get:\\
+
+$\displaystyle 1 + \frac{1}{3} + \frac{1}{5} + \cdots + \frac{1}{2n-1} = \log{2} + \frac{1}{2} \log{n} + \frac{1}{2} \gamma + \epsilon_{2n} - \frac{1}{2} \epsilon_n$\\
+
+$\therefore$ \qquad $\displaystyle s_N = \left(\log{2} + \frac{1}{2} \log{(p_1+p_2+\cdots+p_N)} + \frac{1}{2} \gamma + \epsilon_{2(p_1+p_2+\cdots+p_N)} - \frac{1}{2} \epsilon_{(p_1+p_2+\cdots+p_N)}\right)$\\
+
+\hskip 1.57cm $\displaystyle - \left(\frac{1}{2} \log{(q_1+q_2+\cdots+q_N)} + \frac{1}{2} \gamma + \frac{1}{2}\epsilon_{(q_1+q_2+\cdots+q_N)}\right)$\\
+
+$\therefore$ \qquad $\displaystyle \lim \limits_{N \to \infty} s_N = \log{2} + \frac{1}{2} \log{\frac{p_1+\cdots+p_N}{q_1+\cdots+q_N}} + o(1)$\\
+
+(c)\\
+
+Let $\displaystyle \lim \limits_{N \to \infty} s_N = x$ where $x$ is any real number, we can get:\\
+
+$\displaystyle \lim \limits_{N \to \infty} \frac{p_1+\cdots+p_N}{q_1+\cdots+q_N} = \frac{e^{2x}}{4}$\\
+ 
+It is equivalent to prove that $\exists N'$ \quad $\forall \epsilon > 0$ s.t. $\displaystyle N > N' \Rightarrow \left| \frac{p_1+\cdots+p_N}{q_1+\cdots+q_N} - \frac{e^{2x}}{4}\right| < \epsilon$\\
+
+$\therefore$ \qquad $\displaystyle \frac{e^{2x}}{4} - \epsilon < \frac{p_1+\cdots+p_N}{q_1+\cdots+q_N} < \frac{e^{2x}}{4} + \epsilon$ which is achievable\\
+
+Because no matter how small an interval is, we can always find rational numbers in it.\\
+
+$\therefore$ \qquad by rearrange the order of the alternating harmonic series, we are able to make $\frac{p_1+\cdots+p_N}{q_1+\cdots+q_N}$ equal to any rational number that is within the interval $[\frac{e^{2x}}{4}-\epsilon, \frac{e^2x}{4}+\epsilon]$\\
+
+\vskip 3cm
+
+\end{document}
