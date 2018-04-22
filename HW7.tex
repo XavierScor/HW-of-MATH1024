@@ -246,17 +246,17 @@ $\therefore$ \qquad $\displaystyle \lim \limits_{N \to \infty} s_N = \log{2} + \
 
 (c)\\
 
-Let $\displaystyle \lim \limits_{N \to \infty} s_N = x$ where $x$ is any real number, we can get:\\
+If we set $p_1 = p_2 = \cdots = p_N = p$ \quad $q_1 = q_2 = \cdots = q_N = q$\\
 
-$\displaystyle \lim \limits_{N \to \infty} \frac{p_1+\cdots+p_N}{q_1+\cdots+q_N} = \frac{e^{2x}}{4}$\\
- 
-It is equivalent to prove that $\exists N'$ \quad $\forall \epsilon > 0$ s.t. $\displaystyle N > N' \Rightarrow \left| \frac{p_1+\cdots+p_N}{q_1+\cdots+q_N} - \frac{e^{2x}}{4}\right| < \epsilon$\\
+Then $\displaystyle \lim \limits_{N \to \infty}s_N = \log{2} + \frac{1}{2} \log{\frac{p}{q}} + o(1)$\\
 
-$\therefore$ \qquad $\displaystyle \frac{e^{2x}}{4} - \epsilon < \frac{p_1+\cdots+p_N}{q_1+\cdots+q_N} < \frac{e^{2x}}{4} + \epsilon$ which is achievable\\
+For any real number x, we can show that $s_N$ can be as close to x as we like by choosing $p$ and $q$ as following.\\
 
-Because no matter how small an interval is, we can always find rational numbers in it.\\
+$\forall \epsilon>0$ \quad $\displaystyle \exists \delta = \frac{e^{2x} \epsilon}{2+4\epsilon}$ \quad s.t.\\
 
-$\therefore$ \qquad by rearrange the order of the alternating harmonic series, we are able to make $\frac{p_1+\cdots+p_N}{q_1+\cdots+q_N}$ equal to any rational number that is within the interval $[\frac{e^{2x}}{4}-\epsilon, \frac{e^2x}{4}+\epsilon]$\\
+$\displaystyle |\frac{p}{q} - \frac{e^{2x}}{4}| < \delta \Rightarrow  < \left|x - \log{2} - \frac{1}{2} \log{\frac{p}{q}}\right| < \epsilon$\\
+
+So one can rearrange the above alternating series so that the rearranged sum has $x$ as the limit.\\
 
 \vskip 3cm
 
